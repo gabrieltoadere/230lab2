@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+.header{
+    margin: 0;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
+
+.main{
+    display: flex;
+}
