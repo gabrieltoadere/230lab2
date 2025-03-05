@@ -63,7 +63,6 @@ function getISSData() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-;
       console.log(data.docs[0]);
 
       var year = data.docs[0].first_publish_year;
