@@ -33,7 +33,7 @@ function changeTypeOfCharacter(character) {
   return character;
 }
 
-var partyFighters = party.map(changeTypeOfCharacter());
+var partyFighters = party.map(changeTypeOfCharacter);
 
 // Session Zero: Characters Introduce Themselves
 party.forEach((character) => {
@@ -62,20 +62,19 @@ function getISSData() {
   fetch("https://openlibrary.org/search.json?q=mistborn")
     .then((response) => response.json())
     .then((data) => {
-      // console.log(data);
-      // latitude = data.iss_position.latitude;
-      // longitude = data.iss_position.longitude;
+      console.log(data);
+;
       console.log(data.docs[0]);
 
       var year = data.docs[0].first_publish_year;
 
       if (year > 2000) {
         document.getElementById("latitude").style.backgroundColor = "blue";
+        document.getElementById("latitude").style.color="white";
       } else {
         document.getElementById("latitude").style.backgroundColor = "red";
       }
 
-      document.getElementById("latitude").innerText = latitude;
-      document.getElementById("longitude").innerText = longitude;
+      document.getElementById("latitude").innerText = data.docs[0].title;
     });
 }
