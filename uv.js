@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (cityData) {
             if(cityData.uvIndex > 2) {
                 document.getElementById("forecast").innerHTML = `
-            <p style=" color: red;">${cityData.cityName}'s UV: ${cityData.uvIndex}</p>
+            <p class="foreecast-text" style=" color: red;font-family: "Montserrat Subrayada"">${cityData.cityName}'s UV: ${cityData.uvIndex}</p>
           `;
             } else {
                 document.getElementById("forecast").innerHTML = `
-            <p style=" color: green;">${cityData.cityName}'s UV: ${cityData.uvIndex}</p>
+            <p class="foreecast-text" style=" color: green;font-family: "Montserrat Subrayada"">${cityData.cityName}'s UV: ${cityData.uvIndex}</p>
           `;
             }
           

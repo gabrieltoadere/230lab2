@@ -4,6 +4,7 @@
     justify-content: center;
     border: solid;
     text-align: center;
+    border-radius: 10px;
 }
 
 .main{
@@ -17,9 +18,14 @@
     height: 56px;
     border: solid;
     transition: all 0.3s ease;
+    border-radius: 10px;
 }
 
 .toggleUnitButton:hover {
     cursor: pointer;
     background-color: grey;
+}
+
+.forecast-text {
+    font-family: "Montserrat Subrayada" !important;
 }

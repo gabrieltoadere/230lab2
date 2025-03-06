@@ -10,11 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(data => {
         const cityData = data.find(city => city.cityName.toLowerCase() === selectedCity.toLowerCase());
         if (cityData) {
-          document.getElementById("forecast").innerHTML = `
-            <p>${cityData.cityName}'s Humidity: ${cityData.humidity}</p>
-          `;
+
+          let string=cityData.humidity > 1.0 ? `
+            <p class="foreecast-text" style=" color:purple;font-family: "Montserrat Subrayada"">${cityData.cityName}'s Humidity: ${cityData.humidity}</p>
+          ` :  `
+          <p style="color:orange;font-family: "Montserrat Subrayada"">${cityData.cityName}'s Humidity: ${cityData.humidity}</p>
+        `;;
+
+          document.getElementById("forecast").innerHTML = string;
         } else {
-          document.getElementById("forecast").innerHTML = `<p>City not found.</p>`;
+          document.getElementById("forecast").innerHTML = `<p class="foreecast-text">City not found.</p>`;
         }
       })
       .catch(error => {

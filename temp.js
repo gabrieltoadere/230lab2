@@ -5,20 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
   
-    let isCelsius = true; // Default to Celsius
-    let temperatureCelsius = null; // Store the temperature in Celsius
+    let isCelsius = true; 
+    let temperatureCelsius = null; 
   
     const temperatureInfo = document.getElementById("forecast");
     const toggleUnitButton = document.getElementById("toggleUnitButton");
-  
-    // Fetch data and display temperature
+    let cityData=undefined;
     fetch('sample.json')
       .then(response => response.json())
       .then(data => {
-        const cityData = data.find(city => city.cityName.toLowerCase() === selectedCity.toLowerCase());
+        cityData = data.find(city => city.cityName.toLowerCase() === selectedCity.toLowerCase());
         if (cityData) {
-          temperatureCelsius = cityData.temperatureCelsius; // Store the temperature in Celsius
-          displayTemperature(temperatureCelsius, isCelsius); // Display temperature
+          temperatureCelsius = cityData.temperatureCelsius;
+          displayTemperature(temperatureCelsius, isCelsius); 
         } else {
           temperatureInfo.innerHTML = `<p>City not found.</p>`;
         }
@@ -27,24 +26,21 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error fetching data:", error);
       });
   
-    // Toggle between Celsius and Fahrenheit
     toggleUnitButton.addEventListener("click", function () {
-      isCelsius = !isCelsius; // Toggle the unit
-      displayTemperature(temperatureCelsius, isCelsius); // Update the displayed temperature
+      isCelsius = !isCelsius;
+      displayTemperature(temperatureCelsius, isCelsius); 
       toggleUnitButton.textContent = isCelsius ? "Switch to Fahrenheit" : "Switch to Celsius";
     });
   
-    // Function to display temperature
     function displayTemperature(tempCelsius, isCelsius) {
-      const tempValue = isCelsius ? tempCelsius : (tempCelsius * 9 / 5) + 32; // Convert to Fahrenheit if needed
+      const tempValue = isCelsius ? tempCelsius : (tempCelsius * 9 / 5) + 32; 
       const tempUnit = isCelsius ? "°C" : "°F";
   
-      // Set the color based on the temperature in Celsius
       const color = tempCelsius > 20 ? "yellow" : "blue";
   
       temperatureInfo.innerHTML = `
         <p style="color: ${color};">
-          ${selectedCity}'s Temperature: ${tempValue.toFixed(2)}${tempUnit}
+          ${cityData.cityName}'s Temperature: ${tempValue.toFixed(2)}${tempUnit}
         </p>
       `;
     }

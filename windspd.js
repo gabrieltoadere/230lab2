@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const cityData = data.find(city => city.cityName.toLowerCase() === selectedCity.toLowerCase());
         if (cityData) {
           document.getElementById("forecast").innerHTML = `
-            <p>${cityData.cityName}'s Windspeed: ${cityData.windSpeed}</p>
+            <p class="foreecast-text">${cityData.cityName}'s Windspeed: ${cityData.windSpeed}</p>
           `;
         } else {
-          document.getElementById("forecast").innerHTML = `<p>City not found.</p>`;
+          document.getElementById("forecast").innerHTML = `<p class="foreecast-text">City not found.</p>`;
         }
       })
       .catch(error => {

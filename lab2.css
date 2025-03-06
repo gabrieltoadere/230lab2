@@ -39,6 +39,7 @@ body {
     width: 200px;
     height: 100px;
     transition: all 0.3s ease;
+    background: white;
 }
 
 .button-text{
@@ -112,6 +113,8 @@ body {
 
 .search-bar{
     width: 200px;
+    border: solid;
+    border-radius: 10PX;
 }
 
 .forecast-container{
@@ -132,3 +135,11 @@ body {
     position: absolute;
     right: 0;
 }
+
+.search-button {
+    border: solid;
+    border-radius: 10PX;
+}
+
+
+
