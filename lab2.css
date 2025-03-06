@@ -95,6 +95,7 @@ body {
 
 .weather-forecast{
     font-family: "Montserrat Subrayada";
+    font-size: 15px;
 }
 .search{
     padding-top: 100px;
@@ -103,5 +104,31 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightblue;
+}
+
+.search-button{
+    width: 100px;
+}
+
+.search-bar{
+    width: 200px;
+}
+
+.forecast-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 304px;
+}
+.conversion-button-container{
+    position: absolute;
+    right: 0;
+    width: 100px;
+}
+.conversion-button{
+    margin-top: 13px;
+    margin-left: 10px;
+    font-family: "Montserrat Subrayada";
+    position: absolute;
+    right: 0;
 }

@@ -1,0 +1,25 @@
+.forecast-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.toggleUnitButton{
+    height: 56px;
+    border: solid;
+    transition: all 0.3s ease;
+}
+
+.toggleUnitButton:hover {
+    cursor: pointer;
+    background-color: grey;
+}
